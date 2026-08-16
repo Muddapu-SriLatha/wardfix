@@ -226,10 +226,10 @@ export default function IssueDetailPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="enterprise-card" style={{ padding: '16px', height: '350px' }}>
             <h3 style={{ color: 'var(--text-main)', fontSize: '0.95rem', marginBottom: '12px' }}>Geotagged Location</h3>
-            <IssueMap 
-              issues={[issue]} 
-              center={[parseFloat(issue.latitude), parseFloat(issue.longitude)]} 
-              zoom={15} 
+            <IssueMap
+              issues={[issue]}
+              center={[parseFloat(issue.latitude), parseFloat(issue.longitude)]}
+              zoom={15}
             />
           </div>
         </div>

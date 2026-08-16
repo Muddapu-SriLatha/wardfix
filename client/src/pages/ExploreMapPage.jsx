@@ -45,10 +45,10 @@ export default function ExploreMapPage() {
     const matchesSearch =
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       (item.address && item.address.toLowerCase().includes(searchTerm.toLowerCase()));
-    
+
     if (selectedCategory === 'all') return matchesSearch;
     return matchesSearch && (
-      item.ai_predicted_category === selectedCategory || 
+      item.ai_predicted_category === selectedCategory ||
       (item.category_name && item.category_name.toLowerCase().includes(selectedCategory.toLowerCase()))
     );
   });

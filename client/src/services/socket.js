@@ -6,7 +6,8 @@ export function initSocketClient() {
   if (!socket) {
     socket = io({
       path: '/socket.io',
-      autoConnect: true,
+      autoConnect: false,
+      reconnection: false,
     });
 
     socket.on('connect', () => {

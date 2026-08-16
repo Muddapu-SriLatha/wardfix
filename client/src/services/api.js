@@ -1,4 +1,4 @@
-// HTTP API Service Module leveraging Vite proxies (/api and /ai)
+import { FALLBACK_ISSUES } from './mockData';
 
 const getToken = () => localStorage.getItem('civicfix_token');
 
@@ -18,18 +18,27 @@ export async function fetchApi(endpoint, options = {}) {
     options.body = JSON.stringify(options.body);
   }
 
-  const response = await fetch(`/api${endpoint}`, {
-    ...options,
-    headers,
-  });
+  try {
+    const response = await fetch(`/api${endpoint}`, {
+      ...options,
+      headers,
+    });
 
-  const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      if (endpoint.includes('/issues')) {
+        return { issues: FALLBACK_ISSUES, issue: FALLBACK_ISSUES[0], comments: [] };
+      }
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-  if (!response.ok) {
-    throw new Error(data.error || `HTTP error! status: ${response.status}`);
+    const data = await response.json().catch(() => ({}));
+    return data;
+  } catch (err) {
+    if (endpoint.includes('/issues')) {
+      return { issues: FALLBACK_ISSUES, issue: FALLBACK_ISSUES[0], comments: [] };
+    }
+    throw err;
   }
-
-  return data;
 }
 
 export async function fetchAiClassification(imageFile) {

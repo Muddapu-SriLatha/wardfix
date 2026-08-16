@@ -26,11 +26,11 @@ export default function HomePage() {
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      
+
       {/* 1. TOP HERO SECTION (Replicating image_0.png) */}
       <section style={{ background: '#f0fdfa', padding: '60px 40px 70px 40px', borderBottom: '1px solid #e6f4f1' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
-          
+
           {/* Left Text & CTAs */}
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '20px', background: '#ccfbf1', color: '#0f766e', fontSize: '0.85rem', fontWeight: 700, marginBottom: '16px' }}>
@@ -110,7 +110,7 @@ export default function HomePage() {
                 <rect x="50" y="80" width="70" height="180" fill="rgba(255, 255, 255, 0.15)" rx="4" />
                 <rect x="130" y="50" width="90" height="210" fill="rgba(255, 255, 255, 0.1)" rx="4" />
                 <rect x="230" y="90" width="80" height="170" fill="rgba(255, 255, 255, 0.15)" rx="4" />
-                
+
                 {/* Road Surface & Pedestrian Crossing */}
                 <rect x="0" y="220" width="500" height="80" fill="#1e293b" />
                 <rect x="220" y="235" width="60" height="12" fill="#ffffff" rx="2" />
@@ -125,7 +125,7 @@ export default function HomePage() {
                 <ellipse cx="380" cy="250" rx="40" ry="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
                 <circle cx="350" cy="180" r="20" fill="#f59e0b" />
                 <path d="M 330 240 L 350 200 L 370 240 Z" fill="#334155" />
-                
+
                 <circle cx="420" cy="175" r="20" fill="#f59e0b" />
                 <path d="M 400 240 L 420 195 L 440 240 Z" fill="#0f766e" />
 
@@ -146,14 +146,14 @@ export default function HomePage() {
       {/* 2. 'HOW IT WORKS' SECTION (Replicating image_1.png) */}
       <section style={{ padding: '70px 40px', background: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          
+
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <h2 style={{ fontSize: '2rem', color: '#0f172a', fontWeight: 800, marginBottom: '8px' }}>How It Works</h2>
             <p style={{ color: '#64748b', fontSize: '1rem' }}>Simple, transparent three-step process for civic problem resolution</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px' }}>
-            
+
             {/* Step 1 Card */}
             <div style={{
               background: '#ffffff',
@@ -223,7 +223,7 @@ export default function HomePage() {
       {/* 3. 'PRIORITY ISSUE DIRECTORY' SECTION (Dynamic Grid & Real API Data) */}
       <section id="featured-issues" style={{ padding: '70px 40px', background: '#f8fafc' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          
+
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <h2 style={{ fontSize: '2rem', color: '#0f172a', fontWeight: 800, marginBottom: '8px' }}>Priority Issue Directory</h2>
             <p style={{ color: '#64748b', fontSize: '1rem' }}>Live geotagged reports with real-time AI classification & user-uploaded photo evidence</p>
@@ -281,7 +281,7 @@ export default function HomePage() {
       {/* 4. 'JOIN OUR COMMUNITY' SECTION (Matching image_2.png) */}
       <section style={{ padding: '70px 40px', background: '#f0fdfa', borderTop: '1px solid #e6f4f1' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '48px', alignItems: 'center' }}>
-          
+
           {/* Left Text & Sub-cards */}
           <div>
             <h2 style={{ fontSize: '2.2rem', color: '#0f172a', fontWeight: 800, marginBottom: '16px' }}>
@@ -292,7 +292,7 @@ export default function HomePage() {
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-              
+
               {/* For Citizens Sub-card */}
               <div style={{
                 background: '#ffffff',
@@ -397,9 +397,9 @@ export default function HomePage() {
       {/* 5. DARK-NAVY FOOTER */}
       <footer style={{ background: '#1e293b', color: '#cbd5e1', padding: '50px 40px 30px 40px', marginTop: 'auto' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          
+
           <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', gap: '40px', marginBottom: '40px' }}>
-            
+
             {/* Col 1: WardFix Info */}
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffffff', marginBottom: '14px' }}>
