@@ -1,4 +1,4 @@
-import { FALLBACK_ISSUES } from './mockData';
+import { getLocalIssues } from './mockData';
 
 const getToken = () => localStorage.getItem('civicfix_token');
 
@@ -26,7 +26,8 @@ export async function fetchApi(endpoint, options = {}) {
 
     if (!response.ok) {
       if (endpoint.includes('/issues')) {
-        return { issues: FALLBACK_ISSUES, issue: FALLBACK_ISSUES[0], comments: [] };
+        const issuesList = getLocalIssues();
+        return { issues: issuesList, issue: issuesList[0], comments: [] };
       }
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -35,7 +36,8 @@ export async function fetchApi(endpoint, options = {}) {
     return data;
   } catch (err) {
     if (endpoint.includes('/issues')) {
-      return { issues: FALLBACK_ISSUES, issue: FALLBACK_ISSUES[0], comments: [] };
+      const issuesList = getLocalIssues();
+      return { issues: issuesList, issue: issuesList[0], comments: [] };
     }
     throw err;
   }

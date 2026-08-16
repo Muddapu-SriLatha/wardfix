@@ -4,6 +4,8 @@ import IssueMap from '../components/IssueMap';
 import { fetchApi, fetchAiClassification } from '../services/api';
 import { Upload, MapPin, Cpu, CheckCircle2, AlertCircle, Mic, MicOff, Volume2, Globe, Users } from 'lucide-react';
 
+import { addLocalIssue } from '../services/mockData';
+
 export default function ReportIssuePage() {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
@@ -198,27 +200,41 @@ export default function ReportIssuePage() {
         formData.append('voice_language', selectedLanguage);
       }
 
+      const newIssueRecord = {
+        id: Date.now(),
+        title,
+        description,
+        category_name: aiAnalysis?.predicted_category || 'Coal Dust & Mining Pollution',
+        ai_predicted_category: 'coal_pollution',
+        status: 'submitted',
+        priority: priority || 'urgent',
+        image_url: imagePreview || 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+        latitude: selectedLocation.lat,
+        longitude: selectedLocation.lng,
+        address: address || 'Geotagged Location, Dhanbad',
+        neighborhood: 'Dhanbad Municipal Corporation',
+        assigned_department: 'DMC Health & Public Works',
+        upvotes_count: 1,
+        sla_hours: 12
+      };
+
       try {
-        const res = await fetchApi('/issues', {
+        await fetchApi('/issues', {
           method: 'POST',
           body: formData,
         });
-
-        if (res.merged) {
-          setMergedNotice(res.message);
-          alert(`👥 ${res.message}\nYour submission was merged with Ticket #${res.primaryIssueId}. Total reported citizens: ${res.duplicate_count}.`);
-        } else {
-          alert('✅ Ward problem reported successfully! Geotagged & sent to Municipal Authorities.');
-        }
-
-        navigate('/explore');
       } catch (err) {
-        console.warn('Backend offline, simulating successful submission for demo:', err);
-        alert('✅ Ward problem reported successfully! Geotagged & sent to Municipal Authorities.');
-        navigate('/explore');
-      } finally {
-        setSubmitting(false);
+        console.warn('Backend offline, adding issue to local state:', err);
       }
+
+      addLocalIssue(newIssueRecord);
+      alert('✅ Ward problem reported successfully! Geotagged & added to Live Feed.');
+      navigate('/explore');
+    } catch (err) {
+      setError(err.message || 'Failed to submit report.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
