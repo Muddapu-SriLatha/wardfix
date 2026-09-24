@@ -47,25 +47,6 @@
 | **AI Microservice** | Python 3.10, FastAPI, Uvicorn, PyTorch (`torchvision`), Pillow, Pydantic |
 | **Database & GIS** | SQLite (Dev) / PostgreSQL 15 + PostGIS Extension (Prod) |
 
----
-
-## 📄 Resume & Portfolio Project Descriptions
-
-### 🎯 **Option A: Concise Resume Bullet Points (Ideal for Software Engineering Resumes)**
-```text
-WardFix | Full-Stack Urban Infrastructure & Municipal Resolution System
-• Developed a full-stack civic platform connecting citizens, officers, and contractors with React 18, Node.js, and Leaflet GIS.
-• Engineered a 50-meter Haversine proximity deduplication algorithm in Express.js to automatically merge duplicate citizen tickets.
-• Integrated a Python FastAPI microservice with PyTorch image classification for automated issue categorization and SLA priority assignment.
-• Built multilingual voice recording tools (Hindi, English, Bengali, Tamil, Telugu) and 4-step real-time resolution timeline trackers.
-```
-
-### 🎯 **Option B: Portfolio & LinkedIn Project Summary**
-```text
-WardFix is an enterprise urban management portal designed to streamline municipal issue reporting and resolution. 
-Featuring 1-touch EXIF geotagging, multilingual voice note complaints, AI image classification, 50m radius duplicate merging, 
-and role-aware portals for Citizens, Municipal Officers, and Field Contractors.
-```
 
 ---
 
@@ -116,7 +97,7 @@ python main.py
 
 ---
 
-## 📜 License & Copyright
+
 
 Designed & Developed by **[Muddapu-SriLatha](https://github.com/Muddapu-SriLatha)**.  
-Released under the [MIT License](LICENSE).
+
