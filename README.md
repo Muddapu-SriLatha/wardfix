@@ -6,7 +6,7 @@
 [![Node.js](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-339933.svg)](https://nodejs.org/)
 [![Python FastAPI](https://img.shields.io/badge/AI_Service-FastAPI%20%2B%20PyTorch-009688.svg)](https://fastapi.tiangolo.com/)
 [![Leaflet GIS](https://img.shields.io/badge/Spatial-Leaflet%20GIS-199900.svg)](https://leafletjs.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 
 ---
 
